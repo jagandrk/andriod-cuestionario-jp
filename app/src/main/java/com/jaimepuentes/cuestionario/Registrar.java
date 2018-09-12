@@ -3,6 +3,7 @@ package com.jaimepuentes.cuestionario;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -187,6 +188,9 @@ public class Registrar extends AppCompatActivity implements LoaderCallbacks<Curs
             showProgress(true);
             mAuthTask = new UserLoginTask(email, password);
             mAuthTask.execute((Void) null);
+            Intent getCuestionarioIntent = new Intent(this, CuestionarioWebView.class);
+            getCuestionarioIntent.putExtra("cookieText", "Test");
+            startActivity(getCuestionarioIntent);
         }
     }
 

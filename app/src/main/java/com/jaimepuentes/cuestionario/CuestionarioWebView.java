@@ -1,5 +1,6 @@
 package com.jaimepuentes.cuestionario;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.webkit.WebSettings;
@@ -14,6 +15,8 @@ public class CuestionarioWebView extends AppCompatActivity {
 
         setContentView(R.layout.activity_webview);
 
+        Intent loginActivity = getIntent();
+        String cookieText = loginActivity.getExtras().getString("cookieText");
         webView = (WebView) findViewById(R.id.webview);
         webView.setWebViewClient(new WebViewClient());
 
